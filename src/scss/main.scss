@@ -2,36 +2,20 @@
 
 @import "_variables";
 
-
- @-webkit-keyframes rotate-scale-down-hor {
+@keyframes page-title__picture__rotate {
   0% {
     -webkit-transform: scale(1) rotateX(0);
-            transform: scale(1) rotateX(0);
+    transform: scale(1) rotateX(0);
   }
   50% {
     -webkit-transform: scale(0.5) rotateX(-180deg);
-            transform: scale(0.5) rotateX(-180deg);
+    transform: scale(0.5) rotateX(-180deg);
   }
   100% {
     -webkit-transform: scale(1) rotateX(-360deg);
-            transform: scale(1) rotateX(-360deg);
+    transform: scale(1) rotateX(-360deg);
   }
 }
-@keyframes rotate-scale-down-hor {
-  0% {
-    -webkit-transform: scale(1) rotateX(0);
-            transform: scale(1) rotateX(0);
-  }
-  50% {
-    -webkit-transform: scale(0.5) rotateX(-180deg);
-            transform: scale(0.5) rotateX(-180deg);
-  }
-  100% {
-    -webkit-transform: scale(1) rotateX(-360deg);
-            transform: scale(1) rotateX(-360deg);
-  }
-}
-
 
 html {
   box-sizing: border-box;
@@ -232,7 +216,8 @@ body {
 }
 
 .markdown-list {
-  list-style: none; }
+  list-style: none;
+}
 
 .menu-button {
   display: none;
@@ -279,7 +264,7 @@ body {
   @media screen and (max-width: 1024px) {
     display: block;
     position: fixed;
-    width: 200px;
+    width: 120px;
     height: 100px;
     top: 50px;
     border: none;
@@ -371,9 +356,13 @@ body {
   display: flex;
   flex-direction: column;
   align-items: center;
-    margin: 0 auto;
+  margin: 0 auto;
   &__picture {
     height: 178px;
+    &__rotate {
+      animation: page-title__picture__rotate 0.65s linear both;
+    }
+
     @media screen and (max-width: 425px) {
       height: 130px;
     }
@@ -394,11 +383,6 @@ body {
 pre {
   white-space: pre-wrap;
   overflow-wrap: anywhere;
-}
-
-.rotate-scale-down-hor {
-	-webkit-animation: rotate-scale-down-hor 0.65s linear both;
-	        animation: rotate-scale-down-hor 0.65s linear both;
 }
 
 .start {
@@ -460,7 +444,8 @@ pre {
   text-decoration: none;
   font-weight: bold;
   text-align: center;
-  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(286deg) brightness(103%) contrast(103%);
+  filter: invert(100%) sepia(0%) saturate(0%) hue-rotate(286deg)
+    brightness(103%) contrast(103%);
   @media screen and (max-width: 1024px) {
     position: fixed;
     width: 35px;
@@ -473,12 +458,6 @@ pre {
     justify-content: center;
     text-align: right;
     font-size: 14px;
-  }
-  &:visited {
-    color: #ffffff;
-  }
-  &:hover {
-    color: #607baf;
   }
 }
 
@@ -525,8 +504,6 @@ pre {
   }
 }
 
-
-
 .change-mode {
   background-color: var(--mode-background);
 }
@@ -550,7 +527,7 @@ pre {
   border-radius: 16px;
   font-weight: bold;
   background-color: var(--mode-button);
-  color: var(--mode-button-label)
+  color: var(--mode-button-label);
 }
 
 .change-mode__text {

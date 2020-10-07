@@ -76,7 +76,7 @@
             <h3 id="week1" class="week-article__heading">Tydzień 1</h3>
             <p class="week-article__text">
               Zainstalowałem całe „środowisko“ - potrzebną przeglądarkę, program
-              do pisania kodu oraz konto na Slacku.
+              do pisania kodu VSC oraz założyłem konto na Slacku.
             </p>
           </article>
 
@@ -2669,25 +2669,62 @@ document.documentElement.style.setProperty('--zmienna', 'nowa-wartość');</code
                   </li>
                   <li>
                     <span class="inner-section-list__content"
-                      >Używaj alt="" i kończ opisy kropką. Jak są obrazki, opisywać dokładnie.</span
+                      >Używaj alt="" i kończ opisy kropką. Jak są obrazki,
+                      opisywać dokładnie.</span
                     >
                   </li>
-                  <li><span class="inner-section-list__content"
-                    >ARIA - Accessible Rich Internet Applications - wytyczne, atrybuty wzbogacające naszą stronę o dostepność. Nie wpływają na wygląd, ale pomagają niepełnosprawnym. <a
-                    class="external-link"
-                    href="https://www.w3.org/WAI/standards-guidelines/aria/"
-                    target="_blank"
-                    >w3.org/WAI/standards-guidelines/aria/</a
-                  ></span
-                  >
-                </li>
-                <li>
-                  <span class="inner-section-list__content"
-                    >Rozszerzenie ChromeVox - czyta naszą stronę. Język taki jaki mamy w &lt;head&gt;</span
-                  >
-                </li>
+                  <li>
+                    <span class="inner-section-list__content"
+                      >ARIA - Accessible Rich Internet Applications - wytyczne,
+                      atrybuty wzbogacające naszą stronę o dostepność. Nie
+                      wpływają na wygląd, ale pomagają niepełnosprawnym.
+                      <a
+                        class="external-link"
+                        href="https://www.w3.org/WAI/standards-guidelines/aria/"
+                        target="_blank"
+                        >w3.org/WAI/standards-guidelines/aria/</a
+                      ></span
+                    >
+                  </li>
+                  <li>
+                    <span class="inner-section-list__content"
+                      >Rozszerzenie ChromeVox - czyta naszą stronę. Język taki
+                      jaki mamy w &lt;head&gt;</span
+                    >
+                  </li>
                 </ol>
               </div>
+            </section>
+
+            <section class="inner-section">
+              <h4 class="inner-section__heading">PWA - Progressive Web Apps</h4>
+              <p class="inner-section__text">
+                PWA pozwala na tworzenie aplikacji w HTML, CSS oraz JS, ale mamy
+                dostęp do innych technologii jak np. aparat czy powiadomienia.
+                Łatwa dystrybucja i aktualizacja. Technologia ta działa również
+                offline i jest cały czas w trakcie rozwoju. 
+              </p>
+              <p class="inner-section__text">
+                Szkielet strony z webpacka.
+              </p>
+
+              <p class="inner-section__text">
+                W pliku manifest.jason uzupełniamy na nazwy naszego repo: <code class="code"
+                >scope: "/nazwa-repo"/, start url: "/nazwa-repo"/</code
+              >
+              </p>
+              <p class="inner-section__text">
+                W pliku index.html odkomentowujemy link do manifes.json za pomocą ctrl+/.
+              </p>
+              <p class="inner-section__text">
+                Service-worker.js - działa niezależnie w tle, pozwala nam na korzystanie z aplikacji bez neta. Możemy do niego dodawać pliki, które maja być dostępne offline.
+              </p>
+              <p class="inner-section__text">
+                W pliku index.js odkomentowujemy import do registerSW by zarejstrować naszego Service-workera.
+              </p>
+              <p class="inner-section__text">
+                Możemy wygenerować własne ikony - musimy podmienić ścieżkę oraz nazwę w package.json i uruchomić npm run generate-icons.
+              </p>
             </section>
           </article>
         </section>

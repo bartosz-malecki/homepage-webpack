@@ -1,6 +1,6 @@
 # WTF Homepage 
 
-![cover](gh/cover.png)
+![cover](gh/cover.PNG)
 
 Simple, webpack based page, created as a part of WTF: Co ten frontend training course. 
 

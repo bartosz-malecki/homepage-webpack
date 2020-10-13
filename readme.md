@@ -1,6 +1,10 @@
 # WTF Homepage 
 
+<<<<<<< HEAD
 ![cover](gh/cover.png)
+=======
+![cover](gh/og.image.png)
+>>>>>>> 6461564a1b1199a2d6b8b5bb1e91f068a7664f54
 
 Simple, webpack based page, created as a part of WTF: Co ten frontend training course. 
 

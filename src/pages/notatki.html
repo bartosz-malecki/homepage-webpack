@@ -756,7 +756,7 @@
                 </li>
               </ul>
               <p class="inner-section__text">
-                Nzawy zmiennych podajemy w camelCase. Zmienne mogą przyjmować
+                Nazwy zmiennych podajemy w camelCase. Zmienne mogą przyjmować
                 różne wartości, np. tekst lub liczby.<br />
                 Typy proste (primitive values):
               </p>
@@ -863,25 +863,33 @@
               <p class="inner-section__text">
                 Funkcje stosujemy, aby nie powtarzać wielokrotnie pojawiającego
                 się kodu (zasada <span class="mark">DRY</span> - don't repeat
-                yourself. Łatwiej jest znaleźć i poprawić kod w jednym miejscu
+                yourself. Definiujemy raz i możemy ją wywołać potem
+                wielokrotnie. Łatwiej jest znaleźć i poprawić kod w jednym
+                miejscu
               </p>
               <p class="inner-section__text">Jak wygląda funkcja (przykład):</p>
               <div class="code-wrapper">
                 <pre><code class="code">
 <abbr class="light-on-hover" title="deklaracja">function</abbr> <abbr class="light-on-hover" title="nazwa">calculate</abbr><abbr class="light-on-hover" title="parametr">(myNumber)</abbr> {
-<abbr class="light-on-hover" title="słowo kluczowe">return</abbr>  <abbr class="light-on-hover" title="wynik">myNumber*7</abbr>;
+  <abbr class="light-on-hover" title="słowo kluczowe">return</abbr>  <abbr class="light-on-hover" title="wynik">myNumber*7</abbr>;
 }
                 </code></pre>
               </div>
+
+              <p class="inner-section__text">
+                <code class="code">return</code> - zwraca nam wynik, aby można
+                było go wykorzystać potem w innych operacjach, np. wrzucić do
+                zmiennej.
+              </p>
               <p class="inner-section__text">
                 (Fat) arrow functions (przykład):
               </p>
               <div class="code-wrapper">
                 <pre><code class="code">
 const calculate = (myNumber) =&gt; {
-myNumber = myNumber+3;
-console.log(myNumber);
-return myNumber*7;
+  myNumber = myNumber+3;
+  console.log(myNumber);
+  return myNumber*7;
 }
                 </code></pre>
               </div>
@@ -2177,6 +2185,24 @@ document.documentElement.style.setProperty('--zmienna', 'nowa-wartość');</code
                 Gdy będziemy dodawać jakieś elementy do tablicy, będą one
                 również wypisane.
               </p>
+              <p class="inner-section__text">
+                Pętla FOR IN - przebiega przez własności obiektu (wypisuje wszystkie):
+              </p>
+              <div class="code-wrapper">
+                <pre><code class="code">for (let myProperty in myObject) {
+    console.log(myObject[myProperty]);
+}
+</code></pre>
+              </div>
+              <p class="inner-section__text">
+                Pętla FOR OF - przebiega przez elementy tablicy (wypisuje wszystkie):
+              </p>
+              <div class="code-wrapper">
+                <pre><code class="code">for (let element of myArray) {
+    console.log(element);
+}
+</code></pre>
+              </div>
               <p class="inner-section__text">Kolejna pętla to WHILE:</p>
               <div class="code-wrapper">
                 <pre><code class="code">whlie (warunek logiczny) {
@@ -2196,24 +2222,6 @@ document.documentElement.style.setProperty('--zmienna', 'nowa-wartość');</code
                 <pre><code class="code">do {
     kod
 } while (warunek logiczny)</code></pre>
-              </div>
-              <p class="inner-section__text">
-                Pętla FOR IN - przebiega przez własności obiektu:
-              </p>
-              <div class="code-wrapper">
-                <pre><code class="code">for (let myProperty in myObject) {
-    console.log(myObject[myProperty]);
-}
-</code></pre>
-              </div>
-              <p class="inner-section__text">
-                Pętla FOR OF - przebiega przez elementy tablicy:
-              </p>
-              <div class="code-wrapper">
-                <pre><code class="code">for (let element of myArray) {
-    console.log(element);
-}
-</code></pre>
               </div>
             </section>
             <section class="inner-section">
@@ -2702,28 +2710,32 @@ document.documentElement.style.setProperty('--zmienna', 'nowa-wartość');</code
                 PWA pozwala na tworzenie aplikacji w HTML, CSS oraz JS, ale mamy
                 dostęp do innych technologii jak np. aparat czy powiadomienia.
                 Łatwa dystrybucja i aktualizacja. Technologia ta działa również
-                offline i jest cały czas w trakcie rozwoju. 
+                offline i jest cały czas w trakcie rozwoju.
               </p>
-              <p class="inner-section__text">
-                Szkielet strony z webpacka.
-              </p>
+              <p class="inner-section__text">Szkielet strony z webpacka.</p>
 
               <p class="inner-section__text">
-                W pliku manifest.jason uzupełniamy na nazwy naszego repo: <code class="code"
-                >scope: "/nazwa-repo"/, start url: "/nazwa-repo"/</code
-              >
+                W pliku manifest.jason uzupełniamy na nazwy naszego repo:
+                <code class="code"
+                  >scope: "/nazwa-repo"/, start url: "/nazwa-repo"/</code
+                >
               </p>
               <p class="inner-section__text">
-                W pliku index.html odkomentowujemy link do manifes.json za pomocą ctrl+/.
+                W pliku index.html odkomentowujemy link do manifes.json za
+                pomocą ctrl+/.
               </p>
               <p class="inner-section__text">
-                Service-worker.js - działa niezależnie w tle, pozwala nam na korzystanie z aplikacji bez neta. Możemy do niego dodawać pliki, które maja być dostępne offline.
+                Service-worker.js - działa niezależnie w tle, pozwala nam na
+                korzystanie z aplikacji bez neta. Możemy do niego dodawać pliki,
+                które maja być dostępne offline.
               </p>
               <p class="inner-section__text">
-                W pliku index.js odkomentowujemy import do registerSW by zarejstrować naszego Service-workera.
+                W pliku index.js odkomentowujemy import do registerSW by
+                zarejstrować naszego Service-workera.
               </p>
               <p class="inner-section__text">
-                Możemy wygenerować własne ikony - musimy podmienić ścieżkę oraz nazwę w package.json i uruchomić npm run generate-icons.
+                Możemy wygenerować własne ikony - musimy podmienić ścieżkę oraz
+                nazwę w package.json i uruchomić npm run generate-icons.
               </p>
             </section>
           </article>
@@ -2734,7 +2746,9 @@ document.documentElement.style.setProperty('--zmienna', 'nowa-wartość');</code
           Bartosz Małecki
         </footer>
         <nav>
-          <a class="up-navigation" href="#top"><img src="../assets/img/arrow-up.svg" alt="up arrow"></a>
+          <a class="up-navigation" href="#top"
+            ><img src="../assets/img/arrow-up.svg" alt="up arrow"
+          /></a>
         </nav>
       </main>
     </div>

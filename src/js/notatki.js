@@ -14,12 +14,12 @@ emptyParagraph.innerHTML = `W tym miejscu pojawia się paragraf wstawiony przez 
 
 function calculate(myNumber) {
   console.log(`Jak napisałem wcześniej, mam lat: ${myNumber}`);
-  return myNumber * 9;
+  return myNumber * 7;
 }
 
-const myResoult = calculate(age);
+const myResult = calculate(age);
 
-console.log(`Gdy pomnożę razy 9 dostanę: ${myResoult}`);
+console.log(`Gdy pomnożę razy 7 dostanę: ${myResult}`);
 console.log(`Tyle nigdy nie dożyję :D`);
 
 function createContent(querySelectorContent, content) {
@@ -39,13 +39,13 @@ const third = (anotherNumber) => {
   return anotherNumber * 7;
 };
 
-const myResoult2 = third(3);
-console.log(myResoult2);
+const myResult2 = third(3);
+console.log(`Wynik tego działania to: ${myResult2}`);
 
 const calculate2 = (anotherNumber) => anotherNumber * 10;
 
-const myResoult3 = calculate2(3);
-console.log(myResoult3);
+const myResult3 = calculate2(3);
+console.log(`Natomiast tego: ${myResult3}`);
 
 const car = {
   type: "passenger car",
@@ -60,10 +60,13 @@ const car = {
 };
 
 console.log(car);
+for (let myCar in car) {
+  console.log(car[myCar]);
+}
+
 console.log(car["mark"]);
 console.log(car.fuel);
-console.log(car.navigation("Mielec"));
-
+car.navigation = "Mielec";
 const myProperty = "mark";
 const showMeProperty = (myProperty) => {
   console.log(`Mój samochód ma pojemność ${car[myProperty]}l.`);

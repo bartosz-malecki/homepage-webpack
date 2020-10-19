@@ -2739,6 +2739,305 @@ document.documentElement.style.setProperty('--zmienna', 'nowa-wartość');</code
               </p>
             </section>
           </article>
+          <article class="week-article">
+            <h3 id="week11" class="week-article__heading">Tydzień 11</h3>
+
+            <section class="inner-section">
+              <h4 class="inner-section__heading">
+                Destruktyzacja
+              </h4>
+              <p class="inner-section__text">
+                Destruktyzacja pozwala nam na wyciągnięcie pól z obiektów do osobnych zmiennych. 
+              </p>
+              
+            </section>
+            <section class="inner-section">
+              <h4 class="inner-section__heading">Animacje i przejścia</h4>
+              <p class="inner-section__text">
+                Tutaj lista właściwości, które mogą być animowane:
+                <span class="inner-section-list__content"
+                  ><a
+                    class="external-link"
+                    href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties/"
+                    target="_blank"
+                    >Animatable CSS properties</a
+                  >.</span
+                >
+              </p>
+              <p class="inner-section__text">
+                <code class="code"
+                  >transition: name duration timing-function delay;</code
+                >
+                - polecenie przejścia. Gdy zmianie mają ulec tylko 2 własności,
+                wymieniamy je po przecinku. W devtoolsach możemy edytować efekt
+                (timing-function - krzywa do wyginania).
+              </p>
+              <p class="inner-section__text">
+                <code class="code">will-change: name;</code>
+                - przekazuje przeglądarce, że jakaś własność będzie zmienialna
+                animacją. Pomaga niby przeglądarce, że animacja działa szybciej,
+                nie jest często używane.
+              </p>
+              <p class="inner-section__text">
+                <code class="code">transform: translate (x, y);</code>
+                - przesuwa element.
+              </p>
+              <p class="inner-section__text">
+                <code class="code">transform: rotate (xdeg);</code>
+                - obraca element o daną ilość stopni. Warto dodać własność np.
+                <code class="code">transform-origin: left center;</code> -
+                ustala z którego punktu transformacja ma się wykonać.
+              </p>
+              <p class="inner-section__text">
+                <code class="code">transform: scale (x);</code>
+                - skaluje element. Również można podać z którego punktu jak w
+                rotate.
+              </p>
+              <p class="inner-section__text">
+                Transformacje te nie przesuwają innych elementów na stronie,
+                warto z nich korzystać.
+              </p>
+              <p class="inner-section__text">
+                Animacje - posiadają więcej opcji niż transition. Mogą trwać
+                niezależnie czy dajemy jakiś hover czy nie, mogą działać bez
+                interakcji. Definiujemy za pomocą @keyframes, podobnie jak w
+                SCSS np:
+              </p>
+
+              <div class="code-wrapper">
+                <pre><code class="code">@keyframes name {
+    from {
+      transform: scale (1);
+    }
+    to {
+      transform: scale (2);
+    }
+} </code></pre>
+              </div>
+              <div class="code-wrapper">
+                <pre><code class="code">.className {
+    animation: name duration timing-function delay iteration-count etc. </code></pre>
+              </div>
+              <p class="inner-section__text">
+                <span class="inner-section-list__content"
+                  ><a
+                    class="external-link"
+                    href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation"
+                    target="_blank"
+                    >Dokumentacja</a
+                  >
+                  animacji.</span
+                >
+              </p>
+            </section>
+
+            <section class="inner-section">
+              <h4 class="inner-section__heading">SVG</h4>
+              <p class="inner-section__text">
+                SVG - Scalable vector graphics czyli skalowalna grafika
+                wektorowa. Różni się od formatów rastrowych tym, że nie są
+                kompresowane oraz przy powiększaniu nie tracą na jakości.
+              </p>
+              <p class="inner-section__text">
+                Możemy je dodać tak samo jak pliki .png itp. poprzez &lt;img
+                src=".."&gt;
+              </p>
+
+              <p class="inner-section__text">
+                Możemy nadawać klasy oraz style elementom w svg - nie działa tu
+                specyficzność (w scss ważniejsze). Animacje możemy dodawać już w
+                pliku svg, natomiast jeżeli ma zadziałać na akcję np hover,
+                dodajemy je w SCSS.
+              </p>
+            </section>
+
+            <section class="inner-section">
+              <div class="bem-section__wrapper">
+                <h4 class="inner-section__heading">
+                  &lt;head&gt; & Open Graph
+                </h4>
+                <p class="inner-section__text">
+                  Metaznaczniki &lt;meta&gt;- opisują nasz dokument: język
+                  strony, charset (kodowanie), viewport (jak zachowuje się
+                  strona, co widzimy), &lt;title&gt; (opis na zakładce) oraz
+                  &lt;icon&gt; - ikona na zakładce (favicon).
+                </p>
+                <p class="inner-section__text">
+                  Open Graph - protokół który opisuje stronę za pomocą
+                  specjalnych tagów meta. Najczęsciej spotykamy się z tym, gdy
+                  udostępniamy rzeczy na facebooku (opis, grafikę) - zachęca to
+                  do wejścia w link, takie pierwsze wrażenie.
+                </p>
+                <p class="inner-section__text">
+                  Og: image możemy stwożyć np. w
+                  <a
+                    class="external-link"
+                    href="https://www.canva.com/pl_pl/"
+                    target="_blank"
+                    >Canvie</a
+                  >
+                  z szablonu. Wygląd og (z opublikowanej strony) sprawdzimy
+                  natomiast na
+                  <a
+                    class="external-link"
+                    href="debug.iframely.com/ "
+                    target="_blank"
+                    >debug.iframely.com/</a
+                  >.
+                </p>
+                <p class="inner-section__text">
+                  Oczywiście można użyć tego np w readme na GH.
+                </p>
+              </div>
+            </section>
+
+            <section class="inner-section">
+              <div class="bem-section__wrapper">
+                <h4 class="inner-section__heading">
+                  WAI / WCAG / A11y / ARIA - czyli odpowiedzialność w internecie
+                </h4>
+                <p class="inner-section__text">
+                  WAI - Web Accessibility Initative. Inicjatywa która co jakiś
+                  czas sporządza poradniki, wytyczne, jak nasze strony powinny
+                  się zachowywać niezależnie od naszej sprawności.
+                </p>
+                <p class="inner-section__text">
+                  WCAG - Web Content Accessibility Guidelines. Dokument
+                  opisujący jak nasza strona powinna się zachowywać, działać aby
+                  osoby niepełnosprawne mogły bez problemu z niej korzystać.
+                  Niektóre strony np. instytucji, mają specjalne wymogi.
+                </p>
+                <p class="inner-section__text">
+                  The A11y (Accessibility) Project - projekt do pomocy w
+                  tworzeniu dostępych stron. Więcej info na:
+                  <a
+                    class="external-link"
+                    href="https://www.a11yproject.com/"
+                    target="_blank"
+                    >a11yproject.com/</a
+                  >.
+                </p>
+                <p class="inner-section__text">
+                  Fundacja Widzialni - zajmują się tym tematem w Polsce. Więcej
+                  info na:
+                  <a
+                    class="external-link"
+                    href="http://widzialni.org/"
+                    target="_blank"
+                    >widzialni.org</a
+                  >.
+                </p>
+                <p class="inner-section__text">Rady:</p>
+                <ol class="inner-section-list">
+                  <li>
+                    <span class="inner-section-list__content"
+                      >Pisz semantycznie</span
+                    >
+                  </li>
+                  <li>
+                    <span class="inner-section-list__content"
+                      >Trzymaj kontrast - można sprawdzic tu:
+                      <a
+                        class="external-link"
+                        href="https://color.a11y.com/Contrast/"
+                        target="_blank"
+                        >color.a11y.com/Contrast/</a
+                      ></span
+                    >
+                  </li>
+                  <li>
+                    <span class="inner-section-list__content"
+                      >Dobieraj dobrze kolory -
+                      <a
+                        class="external-link"
+                        href="http://colorsafe.co/"
+                        target="_blank"
+                        >colorsafe.co/</a
+                      >
+                      Jak coś zwracać uwagę projektantom.</span
+                    >
+                  </li>
+                  <li>
+                    <span class="inner-section-list__content"
+                      >Unikaj autoplay - nie straszyć ludzi dzwiękami z
+                      nienacka!</span
+                    >
+                  </li>
+                  <li>
+                    <span class="inner-section-list__content"
+                      >Nie ograniczaj czasowo rzeczy które mają jakąś treść -
+                      można niezdążyć.</span
+                    >
+                  </li>
+                  <li>
+                    <span class="inner-section-list__content"
+                      >Nie usuwaj :focus i outline - można stylować.</span
+                    >
+                  </li>
+                  <li>
+                    <span class="inner-section-list__content"
+                      >Używaj alt="" i kończ opisy kropką. Jak są obrazki,
+                      opisywać dokładnie.</span
+                    >
+                  </li>
+                  <li>
+                    <span class="inner-section-list__content"
+                      >ARIA - Accessible Rich Internet Applications - wytyczne,
+                      atrybuty wzbogacające naszą stronę o dostepność. Nie
+                      wpływają na wygląd, ale pomagają niepełnosprawnym.
+                      <a
+                        class="external-link"
+                        href="https://www.w3.org/WAI/standards-guidelines/aria/"
+                        target="_blank"
+                        >w3.org/WAI/standards-guidelines/aria/</a
+                      ></span
+                    >
+                  </li>
+                  <li>
+                    <span class="inner-section-list__content"
+                      >Rozszerzenie ChromeVox - czyta naszą stronę. Język taki
+                      jaki mamy w &lt;head&gt;</span
+                    >
+                  </li>
+                </ol>
+              </div>
+            </section>
+
+            <section class="inner-section">
+              <h4 class="inner-section__heading">PWA - Progressive Web Apps</h4>
+              <p class="inner-section__text">
+                PWA pozwala na tworzenie aplikacji w HTML, CSS oraz JS, ale mamy
+                dostęp do innych technologii jak np. aparat czy powiadomienia.
+                Łatwa dystrybucja i aktualizacja. Technologia ta działa również
+                offline i jest cały czas w trakcie rozwoju.
+              </p>
+              <p class="inner-section__text">Szkielet strony z webpacka.</p>
+
+              <p class="inner-section__text">
+                W pliku manifest.jason uzupełniamy na nazwy naszego repo:
+                <code class="code"
+                  >scope: "/nazwa-repo"/, start url: "/nazwa-repo"/</code
+                >
+              </p>
+              <p class="inner-section__text">
+                W pliku index.html odkomentowujemy link do manifes.json za
+                pomocą ctrl+/.
+              </p>
+              <p class="inner-section__text">
+                Service-worker.js - działa niezależnie w tle, pozwala nam na
+                korzystanie z aplikacji bez neta. Możemy do niego dodawać pliki,
+                które maja być dostępne offline.
+              </p>
+              <p class="inner-section__text">
+                W pliku index.js odkomentowujemy import do registerSW by
+                zarejstrować naszego Service-workera.
+              </p>
+              <p class="inner-section__text">
+                Możemy wygenerować własne ikony - musimy podmienić ścieżkę oraz
+                nazwę w package.json i uruchomić npm run generate-icons.
+              </p>
+            </section>
+          </article>
         </section>
 
         <footer class="main-footer">

@@ -66,7 +66,8 @@ for (let myCar in car) {
 
 console.log(car["mark"]);
 console.log(car.fuel);
-car.navigation = "Mielec";
+console.log(car.navigation("Mielec"));
+
 const myProperty = "mark";
 const showMeProperty = (myProperty) => {
   console.log(`Mój samochód ma pojemność ${car[myProperty]}l.`);

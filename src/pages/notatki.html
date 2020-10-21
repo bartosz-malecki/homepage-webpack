@@ -2186,7 +2186,8 @@ document.documentElement.style.setProperty('--zmienna', 'nowa-wartość');</code
                 również wypisane.
               </p>
               <p class="inner-section__text">
-                Pętla FOR IN - przebiega przez własności obiektu (wypisuje wszystkie):
+                Pętla FOR IN - przebiega przez własności obiektu (wypisuje
+                wszystkie):
               </p>
               <div class="code-wrapper">
                 <pre><code class="code">for (let myProperty in myObject) {
@@ -2195,7 +2196,8 @@ document.documentElement.style.setProperty('--zmienna', 'nowa-wartość');</code
 </code></pre>
               </div>
               <p class="inner-section__text">
-                Pętla FOR OF - przebiega przez elementy tablicy (wypisuje wszystkie):
+                Pętla FOR OF - przebiega przez elementy tablicy (wypisuje
+                wszystkie):
               </p>
               <div class="code-wrapper">
                 <pre><code class="code">for (let element of myArray) {
@@ -2743,16 +2745,50 @@ document.documentElement.style.setProperty('--zmienna', 'nowa-wartość');</code
             <h3 id="week11" class="week-article__heading">Tydzień 11</h3>
 
             <section class="inner-section">
-              <h4 class="inner-section__heading">
-                Destruktyzacja
-              </h4>
+              <h4 class="inner-section__heading">Destruktyzacja</h4>
               <p class="inner-section__text">
-                Destruktyzacja pozwala nam na wyciągnięcie pól z obiektów do osobnych zmiennych. 
+                Destruktyzacja pozwala nam na wyciągnięcie pól z obiektów do
+                osobnych zmiennych. Tak jakby tworzymy nowy obiekt. Nawiasy {}.
               </p>
-              
+
+              <div class="code-wrapper">
+                <pre><code class="code">const person = {name: 'bartek', age: 20};
+const {name, age} = person;
+console.log(name);
+</code></pre>
+              </div>
+              <p class="inner-section__text">
+                Ważne! Jeżeli zmienimy potem którąś wartość i wypiszemy np.
+                <code class="code">console.log(name);</code>, wciąż dostaniemy
+                starą wartość, ponieważ została ona podpięta wcześniej i nie
+                interesuje ją zmiana.<br />
+                Czyli, musimy zmienić
+                <code class="code">person.name = '';</code> i wywołać ją
+                <code class="code">console.log(person.name);</code>
+              </p>
+              <p class="inner-section__text">
+                Destrukturyzacja działa również w tablicach. Nawiasy [].
+              </p>
+              <div class="code-wrapper">
+                <pre><code class="code">const food = ['apple', 'orange', 'kiwi'];
+const[first, second] = food;
+</code></pre>
+              </div>
+              <p class="inner-section__text">
+                Można nadawać inne nazwy, można również pomijać elementy
+                zostawiącjąc puste miejsce np.
+                <code class="code">const[first, ,third] = food;</code>
+              </p>
+              <p class="inner-section__text">
+                Ogólnie przydatne to jest gdy pracujemy z danymi, można tworzyć
+                takie skróty dzięki temu. Zamiast wywoływać np.
+                całyObiekt.nazwaWłasności, można wyciągnąć tylke te które nas
+                interesują (obiekty). Albo pod konkrente indeksy dać jakieś
+                nazwy i je potem wywoływać (tablice).
+              </p>
             </section>
             <section class="inner-section">
-              <h4 class="inner-section__heading">Animacje i przejścia</h4>
+              <h4 class="inner-section__heading">JS spread operator</h4>
               <p class="inner-section__text">
                 Tutaj lista właściwości, które mogą być animowane:
                 <span class="inner-section-list__content"
@@ -2889,153 +2925,6 @@ document.documentElement.style.setProperty('--zmienna', 'nowa-wartość');</code
                   Oczywiście można użyć tego np w readme na GH.
                 </p>
               </div>
-            </section>
-
-            <section class="inner-section">
-              <div class="bem-section__wrapper">
-                <h4 class="inner-section__heading">
-                  WAI / WCAG / A11y / ARIA - czyli odpowiedzialność w internecie
-                </h4>
-                <p class="inner-section__text">
-                  WAI - Web Accessibility Initative. Inicjatywa która co jakiś
-                  czas sporządza poradniki, wytyczne, jak nasze strony powinny
-                  się zachowywać niezależnie od naszej sprawności.
-                </p>
-                <p class="inner-section__text">
-                  WCAG - Web Content Accessibility Guidelines. Dokument
-                  opisujący jak nasza strona powinna się zachowywać, działać aby
-                  osoby niepełnosprawne mogły bez problemu z niej korzystać.
-                  Niektóre strony np. instytucji, mają specjalne wymogi.
-                </p>
-                <p class="inner-section__text">
-                  The A11y (Accessibility) Project - projekt do pomocy w
-                  tworzeniu dostępych stron. Więcej info na:
-                  <a
-                    class="external-link"
-                    href="https://www.a11yproject.com/"
-                    target="_blank"
-                    >a11yproject.com/</a
-                  >.
-                </p>
-                <p class="inner-section__text">
-                  Fundacja Widzialni - zajmują się tym tematem w Polsce. Więcej
-                  info na:
-                  <a
-                    class="external-link"
-                    href="http://widzialni.org/"
-                    target="_blank"
-                    >widzialni.org</a
-                  >.
-                </p>
-                <p class="inner-section__text">Rady:</p>
-                <ol class="inner-section-list">
-                  <li>
-                    <span class="inner-section-list__content"
-                      >Pisz semantycznie</span
-                    >
-                  </li>
-                  <li>
-                    <span class="inner-section-list__content"
-                      >Trzymaj kontrast - można sprawdzic tu:
-                      <a
-                        class="external-link"
-                        href="https://color.a11y.com/Contrast/"
-                        target="_blank"
-                        >color.a11y.com/Contrast/</a
-                      ></span
-                    >
-                  </li>
-                  <li>
-                    <span class="inner-section-list__content"
-                      >Dobieraj dobrze kolory -
-                      <a
-                        class="external-link"
-                        href="http://colorsafe.co/"
-                        target="_blank"
-                        >colorsafe.co/</a
-                      >
-                      Jak coś zwracać uwagę projektantom.</span
-                    >
-                  </li>
-                  <li>
-                    <span class="inner-section-list__content"
-                      >Unikaj autoplay - nie straszyć ludzi dzwiękami z
-                      nienacka!</span
-                    >
-                  </li>
-                  <li>
-                    <span class="inner-section-list__content"
-                      >Nie ograniczaj czasowo rzeczy które mają jakąś treść -
-                      można niezdążyć.</span
-                    >
-                  </li>
-                  <li>
-                    <span class="inner-section-list__content"
-                      >Nie usuwaj :focus i outline - można stylować.</span
-                    >
-                  </li>
-                  <li>
-                    <span class="inner-section-list__content"
-                      >Używaj alt="" i kończ opisy kropką. Jak są obrazki,
-                      opisywać dokładnie.</span
-                    >
-                  </li>
-                  <li>
-                    <span class="inner-section-list__content"
-                      >ARIA - Accessible Rich Internet Applications - wytyczne,
-                      atrybuty wzbogacające naszą stronę o dostepność. Nie
-                      wpływają na wygląd, ale pomagają niepełnosprawnym.
-                      <a
-                        class="external-link"
-                        href="https://www.w3.org/WAI/standards-guidelines/aria/"
-                        target="_blank"
-                        >w3.org/WAI/standards-guidelines/aria/</a
-                      ></span
-                    >
-                  </li>
-                  <li>
-                    <span class="inner-section-list__content"
-                      >Rozszerzenie ChromeVox - czyta naszą stronę. Język taki
-                      jaki mamy w &lt;head&gt;</span
-                    >
-                  </li>
-                </ol>
-              </div>
-            </section>
-
-            <section class="inner-section">
-              <h4 class="inner-section__heading">PWA - Progressive Web Apps</h4>
-              <p class="inner-section__text">
-                PWA pozwala na tworzenie aplikacji w HTML, CSS oraz JS, ale mamy
-                dostęp do innych technologii jak np. aparat czy powiadomienia.
-                Łatwa dystrybucja i aktualizacja. Technologia ta działa również
-                offline i jest cały czas w trakcie rozwoju.
-              </p>
-              <p class="inner-section__text">Szkielet strony z webpacka.</p>
-
-              <p class="inner-section__text">
-                W pliku manifest.jason uzupełniamy na nazwy naszego repo:
-                <code class="code"
-                  >scope: "/nazwa-repo"/, start url: "/nazwa-repo"/</code
-                >
-              </p>
-              <p class="inner-section__text">
-                W pliku index.html odkomentowujemy link do manifes.json za
-                pomocą ctrl+/.
-              </p>
-              <p class="inner-section__text">
-                Service-worker.js - działa niezależnie w tle, pozwala nam na
-                korzystanie z aplikacji bez neta. Możemy do niego dodawać pliki,
-                które maja być dostępne offline.
-              </p>
-              <p class="inner-section__text">
-                W pliku index.js odkomentowujemy import do registerSW by
-                zarejstrować naszego Service-workera.
-              </p>
-              <p class="inner-section__text">
-                Możemy wygenerować własne ikony - musimy podmienić ścieżkę oraz
-                nazwę w package.json i uruchomić npm run generate-icons.
-              </p>
             </section>
           </article>
         </section>

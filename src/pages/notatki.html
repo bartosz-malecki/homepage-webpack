@@ -2789,81 +2789,36 @@ const[first, second] = food;
             </section>
             <section class="inner-section">
               <h4 class="inner-section__heading">JS spread operator</h4>
+              
               <p class="inner-section__text">
-                Tutaj lista właściwości, które mogą być animowane:
-                <span class="inner-section-list__content"
-                  ><a
-                    class="external-link"
-                    href="https://developer.mozilla.org/en-US/docs/Web/CSS/CSS_animated_properties/"
-                    target="_blank"
-                    >Animatable CSS properties</a
-                  >.</span
-                >
+                Można tego użyć aby połączyć kilka obiektów. Zamiast wypisywać na piechotę każdą własność, spread operator <i>rozsmarowywuje</i> czy merguje w całość. 
               </p>
-              <p class="inner-section__text">
-                <code class="code"
-                  >transition: name duration timing-function delay;</code
-                >
-                - polecenie przejścia. Gdy zmianie mają ulec tylko 2 własności,
-                wymieniamy je po przecinku. W devtoolsach możemy edytować efekt
-                (timing-function - krzywa do wyginania).
-              </p>
-              <p class="inner-section__text">
-                <code class="code">will-change: name;</code>
-                - przekazuje przeglądarce, że jakaś własność będzie zmienialna
-                animacją. Pomaga niby przeglądarce, że animacja działa szybciej,
-                nie jest często używane.
-              </p>
-              <p class="inner-section__text">
-                <code class="code">transform: translate (x, y);</code>
-                - przesuwa element.
-              </p>
-              <p class="inner-section__text">
-                <code class="code">transform: rotate (xdeg);</code>
-                - obraca element o daną ilość stopni. Warto dodać własność np.
-                <code class="code">transform-origin: left center;</code> -
-                ustala z którego punktu transformacja ma się wykonać.
-              </p>
-              <p class="inner-section__text">
-                <code class="code">transform: scale (x);</code>
-                - skaluje element. Również można podać z którego punktu jak w
-                rotate.
-              </p>
-              <p class="inner-section__text">
-                Transformacje te nie przesuwają innych elementów na stronie,
-                warto z nich korzystać.
-              </p>
-              <p class="inner-section__text">
-                Animacje - posiadają więcej opcji niż transition. Mogą trwać
-                niezależnie czy dajemy jakiś hover czy nie, mogą działać bez
-                interakcji. Definiujemy za pomocą @keyframes, podobnie jak w
-                SCSS np:
-              </p>
-
               <div class="code-wrapper">
-                <pre><code class="code">@keyframes name {
-    from {
-      transform: scale (1);
-    }
-    to {
-      transform: scale (2);
-    }
-} </code></pre>
+                <pre><code class="code">const person = {
+    name: 'Bartek', 
+    age: 20
+}</code></pre>
               </div>
               <div class="code-wrapper">
-                <pre><code class="code">.className {
-    animation: name duration timing-function delay iteration-count etc. </code></pre>
+                <pre><code class="code">const address = {
+    city: 'Rzeszow', 
+    country: 'Poland'
+}</code></pre>
+              </div>
+              <div class="code-wrapper">
+                <pre><code class="code">const personWithAddress = {
+    ...person,
+    ...address
+}</code></pre>
               </div>
               <p class="inner-section__text">
-                <span class="inner-section-list__content"
-                  ><a
-                    class="external-link"
-                    href="https://developer.mozilla.org/en-US/docs/Web/CSS/animation"
-                    target="_blank"
-                    >Dokumentacja</a
-                  >
-                  animacji.</span
-                >
+                Ostatnie polecenie podaje bezpośrednio wszystkie własności (klucze) danego obiektu, bez potrzeby odwoływania się do każdego z nich (person.name, person.age itd.)
+              </p>
+              <p class="inner-section__text">
+                Spread operator działa analogicznie z tablicami, umieszcza wszystkie elementy wywołanej tablicy: <code class="code">const newArray = [...fruitArray, ...drinksArray];</code>
+              </p>
+              <p class="inner-section__text">
+                Jest takim skrótem, który pozwala nam na wrzucanie tych wartości po kolei do obiektów/tablic bez konieczności wypisywania ich. Przydatna funkcja gdy korzystamy z danych zewnętrznych.
               </p>
             </section>
 

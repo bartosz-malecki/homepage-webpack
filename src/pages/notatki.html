@@ -548,16 +548,20 @@
                 <span class="mark">Git</span> - system kontroli wersji
               </p>
               <p class="inner-section__text">
-                <b>Repozytorium</b> - projekt, jego wszystkie pliki w różnych
-                etapach.
+                <span class="mark">Repozytorium</span> - projekt, jego wszystkie
+                pliki w różnych etapach.
               </p>
               <p class="inner-section__text">
-                <b>Commit</b> - obecny stan projektu i opis, co się zmieniło od
-                ostatniej wersji, rodzaj "save-a". Gitowi trzeba zasygnalizować,
-                które pliki ma śledzić - gdy dodajemy nowy plik
+                <span class="mark">Commit</span> - obecny stan projektu i opis,
+                co się zmieniło od ostatniej wersji, rodzaj "save-a". Gitowi
+                trzeba zasygnalizować, które pliki ma śledzić - gdy dodajemy
+                nowy plik
               </p>
               <p class="inner-section__text">
-                <b>git commit -m "name of version, description (in english)"</b>
+                <span class="mark"
+                  >git commit -m "name of version, description (in
+                  english)"</span
+                >
                 - dodawanie nowego commitu (w terminalu). Więcej komend w
                 zakładce
                 <a class="external-link" href="terminal.html">Terminal</a>.
@@ -2745,9 +2749,9 @@ document.documentElement.style.setProperty('--zmienna', 'nowa-wartość');</code
             <h3 id="week11" class="week-article__heading">Tydzień 11</h3>
 
             <section class="inner-section">
-              <h4 class="inner-section__heading">Destruktyzacja</h4>
+              <h4 class="inner-section__heading">Destrukturyzacja</h4>
               <p class="inner-section__text">
-                Destruktyzacja pozwala nam na wyciągnięcie pól z obiektów do
+                Destrukturyzacja pozwala nam na wyciągnięcie pól z obiektów do
                 osobnych zmiennych. Tak jakby tworzymy nowy obiekt. Nawiasy {}.
               </p>
 
@@ -2789,9 +2793,11 @@ const[first, second] = food;
             </section>
             <section class="inner-section">
               <h4 class="inner-section__heading">JS spread operator</h4>
-              
+
               <p class="inner-section__text">
-                Można tego użyć aby połączyć kilka obiektów. Zamiast wypisywać na piechotę każdą własność, spread operator <i>rozsmarowywuje</i> czy merguje w całość. 
+                Można tego użyć aby połączyć kilka obiektów. Zamiast wypisywać
+                na piechotę każdą własność, spread operator
+                <i>rozsmarowywuje</i> czy merguje w całość.
               </p>
               <div class="code-wrapper">
                 <pre><code class="code">const person = {
@@ -2812,33 +2818,135 @@ const[first, second] = food;
 }</code></pre>
               </div>
               <p class="inner-section__text">
-                Ostatnie polecenie podaje bezpośrednio wszystkie własności (klucze) danego obiektu, bez potrzeby odwoływania się do każdego z nich (person.name, person.age itd.)
+                Ostatnie polecenie podaje bezpośrednio wszystkie własności
+                (klucze) danego obiektu, bez potrzeby odwoływania się do każdego
+                z nich (person.name, person.age itd.)
               </p>
               <p class="inner-section__text">
-                Spread operator działa analogicznie z tablicami, umieszcza wszystkie elementy wywołanej tablicy: <code class="code">const newArray = [...fruitArray, ...drinksArray];</code>
+                Spread operator działa analogicznie z tablicami, umieszcza
+                wszystkie elementy wywołanej tablicy:
+                <code class="code"
+                  >const newArray = [...fruitArray, ...drinksArray];</code
+                >
               </p>
               <p class="inner-section__text">
-                Jest takim skrótem, który pozwala nam na wrzucanie tych wartości po kolei do obiektów/tablic bez konieczności wypisywania ich. Przydatna funkcja gdy korzystamy z danych zewnętrznych.
+                Jest takim skrótem, który pozwala nam na wrzucanie tych wartości
+                po kolei do obiektów/tablic bez konieczności wypisywania ich.
+                Przydatna funkcja gdy korzystamy z danych zewnętrznych.
               </p>
             </section>
 
             <section class="inner-section">
-              <h4 class="inner-section__heading">SVG</h4>
+              <h4 class="inner-section__heading">JS - API</h4>
               <p class="inner-section__text">
-                SVG - Scalable vector graphics czyli skalowalna grafika
-                wektorowa. Różni się od formatów rastrowych tym, że nie są
-                kompresowane oraz przy powiększaniu nie tracą na jakości.
+                API - Application Programming Interface służy do pobierania
+                danych z zewnątrz. Taki zestaw funkcji/reguł definiujący
+                komunikację pomiędzy programami komputerowymi. Mogą być
+                wykorzystywane przez innych deweloperów, aby nie musieć pisać
+                rzeczy od zera.
               </p>
               <p class="inner-section__text">
-                Możemy je dodać tak samo jak pliki .png itp. poprzez &lt;img
-                src=".."&gt;
+                API pozwala na wykonywanie operacji takich jak pobieranie,
+                dodawanie, usuwanie i modyfikacja w aplikacji. Nie musimy znać
+                jej budowy od środka, czyli jak wygląda backend, jak sie
+                konstruuje bazy danych. Pytanie - odpowiedź.
+              </p>
+              <p class="inner-section__text">
+                JS udostępnia nam szereg różnych API, tak samo jak wiele innych
+                gotowych produktów (google, slack gitgub itp.).
+              </p>
+              <p class="inner-section__text">
+                Sposoby konstruowania takiego API:
+              </p>
+              <ol class="inner-section-list">
+                <li>
+                  <span class="inner-section-list__content"
+                    >GraphQL (zyskuje na popularności, warto się zainteresować)
+                    - "sympatyczny" sposób pobierania danych, przystosowany do
+                    nowoczesnych aplikacji internetowych;</span
+                  >
+                </li>
+                <li>
+                  <span class="inner-section-list__content"
+                    >REST - Representational State Transfer - styl architektury
+                    oprogramowania opierający się o zbiór wcześniej określonych
+                    reguł opisujących jak definiowane są zasoby, a także
+                    umożliwiających dostęp do nich.</span
+                  >
+                </li>
+              </ol>
+
+              <p class="inner-section__text">
+                W skrócie - API są to reguły określające jak użytkownik może
+                uzyskać dostęp do jakiś zasobów oraz w jakiej postaci je
+                otrzymuje. Natomiast REST to styl architektury definiujący jak
+                zbudowane będzie to API.
+              </p>
+              <p class="inner-section__text">
+                Połączyć się z API możemy np. za pomocą aplikacji
+                <span class="mark">POSTMAN</span> - pozwala na podglądanie żądań
+                HTTP i wysyłanie/tworzenie ich itd.
+              </p>
+              <p class="inner-section__text">
+                <span class="mark">FETCH API</span> - pobieranie danych z
+                zewnętrzengo serwisu.
+              </p>
+              <p class="inner-section__text">
+                <span class="mark">PROMISE</span> - (promisy) - mechanizm na
+                którym opiera się FETCH API.
+              </p>
+
+              <div class="code-wrapper">
+                <pre><code class="code">something()
+.then((response) => {
+  do something;
+})
+.catch((error) => {
+
+})
+
+console.log('test');   //wykona się międzyczasie
+</code></pre>
+              </div>
+
+              <p class="inner-section__text">
+                Nie blokuje to kodu, kod nie wykonuje się po kolei linijkami.
+                Taki mechanizm to <span class="mark">asynchroniczność</span>.
               </p>
 
               <p class="inner-section__text">
-                Możemy nadawać klasy oraz style elementom w svg - nie działa tu
-                specyficzność (w scss ważniejsze). Animacje możemy dodawać już w
-                pliku svg, natomiast jeżeli ma zadziałać na akcję np hover,
-                dodajemy je w SCSS.
+                <span class="mark">FETCH:</span>
+              </p>
+
+              <div class="code-wrapper">
+                <pre><code class="code">fetch("https://adres-api")
+.then(resp => resp.json())
+.then(resp => {
+    //w resp jest json z odpowiedzią
+    })
+.catch(error => {
+    console.log('Nie udało się pobrać')
+})
+</code></pre>
+              </div>
+              <p class="inner-section__text">
+                Czyli chcę pobrać dane z danego adresu w formacie json.
+              </p>
+              <div class="code-wrapper">
+                <pre><code class="code">for (let repo of resp) {
+    const {name, html_url} = repo;
+    const repositoryList =
+document.queryselector('.list--js');
+    const myTemplate = `&lt;li&gt
+${name} &lt;a href="${html_url}" title="link do repozytorium ${name} na githubie">link do gh&lt;/a&gt
+&lt;/li&gt`;
+repositoryList.innerHTML += myTemplate;
+}
+</code></pre>
+              </div>
+              <p class="inner-section__text">
+                <span class="mark">+=</span> nie nadpisuje w pętli zawartości,
+                tylko dodaje nową treść.
               </p>
             </section>
 
@@ -2883,7 +2991,18 @@ const[first, second] = food;
             </section>
           </article>
         </section>
+        <section class="section" id="notatki">
+          <h2 class="section__heading">Inne projekty</h2>
 
+          <p class="week-article__text">
+            Moje pozostałe projekty utworzone w trakcie WTF:
+          </p>
+          <ul class="inner-section-list repository-list--js">
+            <li><span class="inner-section-list__content">test
+              </span></li>
+            
+          </ul>
+        </section>
         <footer class="main-footer">
           Strona powstaje na potrzeby szkolenia <em>cotenfrontend</em> by
           Bartosz Małecki

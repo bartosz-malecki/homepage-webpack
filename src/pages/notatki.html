@@ -2933,14 +2933,14 @@ console.log('test');   //wykona się międzyczasie
                 Czyli chcę pobrać dane z danego adresu w formacie json.
               </p>
               <div class="code-wrapper">
-                <pre><code class="code">for (let repo of resp) {
-    const {name, html_url} = repo;
-    const repositoryList =
-document.queryselector('.list--js');
-    const myTemplate = `&lt;li&gt
-${name} &lt;a href="${html_url}" title="link do repozytorium ${name} na githubie">link do gh&lt;/a&gt
-&lt;/li&gt`;
-repositoryList.innerHTML += myTemplate;
+                <pre><code class="code">const repositoryList = document.querySelector('.repository-list--js'); // nad fetch
+                                for (let repo of resp) {
+                                const{name, html_url} = repo;
+                                console.log(`${name} ${html_url}`);
+const myTemplate = `&lt;li>&lt;span class="inner-section-list__content">
+    ${name}: &lt;a href="${html_url}" class="external-link" target=_blank rel="noopener">${html_url}&lt;/a>
+    &lt;/span>&lt;/li>`;
+                                repositoryList.innerHTML += myTemplate;
 }
 </code></pre>
               </div>
@@ -2953,39 +2953,126 @@ repositoryList.innerHTML += myTemplate;
             <section class="inner-section">
               <div class="bem-section__wrapper">
                 <h4 class="inner-section__heading">
-                  &lt;head&gt; & Open Graph
+                  Test stron na różnych przeglądarkach
                 </h4>
+                <p class="inner-section__text">Testować można np. w:</p>
+                <p class="inner-section__text"></p>
+
+                <ol class="inner-section-list">
+                  <li>
+                    <span class="inner-section-list__content"
+                      ><a
+                        class="external-link"
+                        href="https://browserstack.com"
+                        target="_blank"
+                        >browserstack.com</a
+                      >
+                      - można wybrać sobie system operacyjny, urządzenie czy
+                      przeglądarkę. (Darmowa wersja tylko na 1 min.)</span
+                    >
+                  </li>
+                  <li>
+                    <span class="inner-section-list__content"
+                      ><a
+                        class="external-link"
+                        href="https://browsershots.org"
+                        target="_blank"
+                        >browsershots.org</a
+                      >
+                    </span>
+                  </li>
+                  <li>
+                    <span class="inner-section-list__content"
+                      >Virtualbox (itp. wirtualne maszyny) - emuluje inne
+                      systemy.</span
+                    >
+                  </li>
+                  <li>
+                    <span class="inner-section-list__content"
+                      >Wirtualny Internet Explorer</span
+                    >
+                  </li>
+                </ol>
                 <p class="inner-section__text">
-                  Metaznaczniki &lt;meta&gt;- opisują nasz dokument: język
-                  strony, charset (kodowanie), viewport (jak zachowuje się
-                  strona, co widzimy), &lt;title&gt; (opis na zakładce) oraz
-                  &lt;icon&gt; - ikona na zakładce (favicon).
+                  <span class="mark">Progressive enhancement</span> - technika
+                  umożliwiająca użytkownikowi pełen dostęp do treści niezależnie
+                  od urządzenia i wersji przeglądarki (z ewentualnym pominięciem
+                  grida czy flexboxa). W SCSS:
+                </p>
+                <div class="code-wrapper">
+                  <pre><code class="code">@supports (display: grid) {
+    div {
+        display: grid;
+        }
+    }
+@ supports not (display: grid) {
+    div {
+        float: right;
+    }
+}
+  </code></pre>
+                </div>
+                <p class="inner-section__text">
+                  Przy nowym projekcie, warto dowiedzieć się, na jakich
+                  przeglądarkach ma działać projekt.
+                </p>
+              </div>
+            </section>
+
+            <section class="inner-section">
+              <div class="bem-section__wrapper">
+                <h4 class="inner-section__heading">Optymalizacja stron</h4>
+                <p class="inner-section__text">
+                  Im mniejszy rozmiar plików tym szybciej ładuje się strona -
+                  300ms to dużo czasu. Można zajrzeć do DevTools - Network - tam
+                  można sprawdzić rozmiar elementów i czas ładowania.
                 </p>
                 <p class="inner-section__text">
-                  Open Graph - protokół który opisuje stronę za pomocą
-                  specjalnych tagów meta. Najczęsciej spotykamy się z tym, gdy
-                  udostępniamy rzeczy na facebooku (opis, grafikę) - zachęca to
-                  do wejścia w link, takie pierwsze wrażenie.
+                  Zakładka Lighthuose/audit - generuje raport który pokazuje jak
+                  strona/aplikacja jest dostosowana do ładowania na
+                  urządzeniach. Pokazuje błędy które można naprawić.
                 </p>
                 <p class="inner-section__text">
-                  Og: image możemy stwożyć np. w
+                  Zakładka Lighthuose/audit - generuje raport który pokazuje jak
+                  strona/aplikacja jest dostosowana do ładowania na
+                  urządzeniach. Pokazuje błędy które można naprawić.
+                </p>
+                <p class="inner-section__text">
                   <a
                     class="external-link"
-                    href="https://www.canva.com/pl_pl/"
+                    href="https://web.dev"
                     target="_blank"
-                    >Canvie</a
+                    >https://web.dev</a
                   >
-                  z szablonu. Wygląd og (z opublikowanej strony) sprawdzimy
-                  natomiast na
-                  <a
-                    class="external-link"
-                    href="debug.iframely.com/ "
-                    target="_blank"
-                    >debug.iframely.com/</a
-                  >.
+                  - podobne do Lighthuose.
                 </p>
                 <p class="inner-section__text">
-                  Oczywiście można użyć tego np w readme na GH.
+                  <a
+                    class="external-link"
+                    href="https://tinypng.com"
+                    target="_blank"
+                    >https://tinypng.com</a
+                  >
+                  - strona do kompresji plików z obrazkami.
+                </p>
+
+                <p class="inner-section__text">
+                  Sprawdzenie czy wszystko co importujemy, każda paczka, jest
+                  nam potrzebna.
+                </p>
+
+                <p class="inner-section__text">
+                  Minifikacja - usuwa wszytskie białe znaki (spacje, entery
+                  itd.), podmienia nazwy zmiennych na pojedyńcze litery. Dla
+                  przeglądarki to i tak bez znaczenia i sobie ogarnia. Nasz
+                  starter kid to posiada.
+                </p>
+                <p class="inner-section__text">
+                  CSS krytyczny - część arkusza, ta którą widać przy otwarciu strony, daje sie od razu w części <head> (style itp.) strona nie czeka na załadowanie reszty stylów. <a
+                    class="external-link"
+                    href="https://web.dev/extract-critical-css"
+                    >https://web.dev/extract-critical-css</a
+                  >
                 </p>
               </div>
             </section>

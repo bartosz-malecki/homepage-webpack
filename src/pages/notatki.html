@@ -3139,12 +3139,12 @@ stopButton.addEventListener('click', (e) => {
             <section class="inner-section">
               <h4 class="inner-section__heading">Frameworki CSS</h4>
               <p class="inner-section__text">
-                <span class="mark">Bootstrap</span> - daje gotowe elementy, klasy itd. pozwalające na
-                szybką budowę strony, w zasadzie nie potrzeba znajomiści html i
-                css. Można zainstalować przez NPM lub CDN. Czasem szybciej
-                jednak jest pisać samemu kod, kiedy dołączymy też go do
-                projektu, mamy też masę niepotrzebnych rzeczy, a które zajmują
-                miejsce i spowalniają.
+                <span class="mark">Bootstrap</span> - daje gotowe elementy,
+                klasy itd. pozwalające na szybką budowę strony, w zasadzie nie
+                potrzeba znajomiści html i css. Można zainstalować przez NPM lub
+                CDN. Czasem szybciej jednak jest pisać samemu kod, kiedy
+                dołączymy też go do projektu, mamy też masę niepotrzebnych
+                rzeczy, a które zajmują miejsce i spowalniają.
                 <a
                   class="external-link"
                   href="https://getbootstrap.com/docs/4.5/getting-started/introduction/"
@@ -3153,10 +3153,12 @@ stopButton.addEventListener('click', (e) => {
                 >
               </p>
               <p class="inner-section__text">
-                <span class="mark">Tailwind</span> - nie trzeba pisać CSS, dobrze działa z Reactem. Można
-                zainstalować przez NPM, CDN, można też importować. Można
-                wygenerować swój zestaw. Nie piszemy CSS-ów, korzystamy tylko z
-                tych klas już podanych. Trochę nieczytelny HTML się robi. <a
+                <span class="mark">Tailwind</span> - nie trzeba pisać CSS,
+                dobrze działa z Reactem. Można zainstalować przez NPM, CDN,
+                można też importować. Można wygenerować swój zestaw. Nie piszemy
+                CSS-ów, korzystamy tylko z tych klas już podanych. Trochę
+                nieczytelny HTML się robi.
+                <a
                   class="external-link"
                   href="https://tailwindcss.com/"
                   target="_blank"
@@ -3169,6 +3171,51 @@ stopButton.addEventListener('click', (e) => {
                 specyficzność (w scss ważniejsze). Animacje możemy dodawać już w
                 pliku svg, natomiast jeżeli ma zadziałać na akcję np hover,
                 dodajemy je w SCSS.
+              </p>
+            </section>
+
+            <section class="inner-section">
+              <h4 class="inner-section__heading">
+                Kilka przydatnych selektorów w CSS
+              </h4>
+              <p class="inner-section__text">
+                <span class="mark">+</span> - selektor bezpośredniego
+                rodzeństwa. Pierwsze wystąpienie po. Przydatne gdy nie mamy
+                dostępu do klas/html.
+              </p>
+              <p class="inner-section__text">
+                <span class="mark">~</span> - selektor ogólnego rodzeństwa.
+                Wybiera całe rodzeństwo po itemie. Np.:
+              </p>
+              <div class="code-wrapper">
+                <pre><code class="code">.item + li {
+    właściwość: wartość;
+}
+  </code></pre>
+              </div>
+              <p class="inner-section__text">
+                <span class="mark">></span> - bezpośrednie dziecko. Czasami się przydaje w nawigacji gdzie mamy zagnieżdżone listy nawigacyjne i nie ma możliwości zmiany html-a.
+              </p>
+              <p class="inner-section__text">
+                <span class="mark">[]</span> - selektor atrybutów. Pozwala na wybieranie rzeczy za pomocą atrybutów. Możemy tworzyć własne atrybuty. Np.:
+              </p>
+              <div class="code-wrapper">
+                <pre><code class="code">[href] {
+    właściwość: wartość;
+}
+  </code></pre>
+              </div>
+              <p class="inner-section__text">
+                atrybut<span class="mark">*</span>="sth" - oznacza, że ta wartość ma się gdzieś znaleźć.
+              </p>
+              <p class="inner-section__text">
+                atrybut<span class="mark">^</span>="sth" - oznacza, że od tego powinno się zacząć.
+              </p>
+              <p class="inner-section__text">
+                atrybut<span class="mark">$</span>="sth" - oznacza, że ma się tym kończyć.
+              </p>
+              <p class="inner-section__text">
+                Przydaje się gdy np. chcemy wyróżnić linki do zewnętrznych serwisów od tych wewnętrznych.
               </p>
             </section>
           </article>

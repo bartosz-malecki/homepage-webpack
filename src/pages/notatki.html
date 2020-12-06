@@ -869,7 +869,27 @@
                 wielokrotnie. Łatwiej jest znaleźć i poprawić kod w jednym
                 miejscu
               </p>
-              <p class="inner-section__text">Jak wygląda funkcja (przykład):</p>
+              <p class="inner-section__text">
+                Mamy 3 rodzaje funkcji, ale działają w podobny sposób: otrzymują dane wejściowe, przekształcają dane oraz je wyprowadzają.
+              </p>
+              <ol class="inner-section-list" start="1">
+                <li>
+                  <span class="inner-section-list__content"
+                    >Deklaracja funkcji (function declaration) - cechą szczególną jest, że mogą być używane przed jej zadeklarowaniem. </span
+                  >
+                </li>
+                <li>
+                  <span class="inner-section-list__content"
+                    >Wyrażenie funkcyjne (function expression) - są zasadniczo wartościami funkcyjnymi przechowywanymi w zmiennej. </span
+                  >
+                </li>
+                <li>
+                  <span class="inner-section-list__content"
+                    >Funkcja strzałkowa (arrow function) - specjalne wyrażenia funkcyjne. Dobre do szybkich funkcji jednowierszowych, w których nie musmy używać nawiasów klamrowych ani słowa kluczowego.</span
+                  >
+                </li>
+              </ol>  
+              <p class="inner-section__text">Jak wygląda funkcja (deklaracja funkcji):</p>
               <div class="code-wrapper">
                 <pre><code class="code">
 <abbr class="light-on-hover" title="deklaracja">function</abbr> <abbr class="light-on-hover" title="nazwa">calculate</abbr><abbr class="light-on-hover" title="parametr">(myNumber)</abbr> {
@@ -883,6 +903,24 @@
                 było go wykorzystać potem w innych operacjach, np. wrzucić do
                 zmiennej.
               </p>
+              <p class="inner-section__text">
+                Wyrażenie funkcyjne:
+              </p>
+              <div class="code-wrapper">
+                <pre><code class="code">
+const calculate = function (myNumber) {  
+  return myNumber*7;
+}
+                </code></pre>
+              </div>
+              <p class="inner-section__text">
+                Arrow function:
+              </p>
+              <div class="code-wrapper">
+                <pre><code class="code">
+const calculate = myNumber =&gt; myNumber*7;
+                </code></pre>
+              </div>
               <p class="inner-section__text">
                 (Fat) arrow functions (przykład):
               </p>

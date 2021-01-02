@@ -190,6 +190,18 @@
                   >
                 </li>
                 <li>
+                  <span class="mark">&lt;sup&gt;</span
+                  ><span class="inner-section-list__content">
+                    - górny indeks</span
+                  >
+                </li>
+                <li>
+                  <span class="mark">&lt;sub&gt;</span
+                  ><span class="inner-section-list__content">
+                    - dolny indeks</span
+                  >
+                </li>
+                <li>
                   <span class="mark">&lt;strong&gt;</span
                   ><span class="inner-section-list__content">
                     - <strong>important</strong>, pogrubienie + ważność (np. w
@@ -201,6 +213,12 @@
                   ><span class="inner-section-list__content">
                     - <em>emphasize</em>, kursywa + emocjonalne
                     podkreślenie</span
+                  >
+                </li>
+                <li>
+                  <span class="mark">&lt;hr&gt;</span
+                  ><span class="inner-section-list__content">
+                    - linia oddzielająca</span
                   >
                 </li>
                 <li>
@@ -870,26 +888,35 @@
                 miejscu
               </p>
               <p class="inner-section__text">
-                Mamy 3 rodzaje funkcji, ale działają w podobny sposób: otrzymują dane wejściowe, przekształcają dane oraz je wyprowadzają.
+                Mamy 3 rodzaje funkcji, ale działają w podobny sposób: otrzymują
+                dane wejściowe, przekształcają dane oraz je wyprowadzają.
               </p>
               <ol class="inner-section-list" start="1">
                 <li>
                   <span class="inner-section-list__content"
-                    >Deklaracja funkcji (function declaration) - cechą szczególną jest, że mogą być używane przed jej zadeklarowaniem. </span
-                  >
+                    >Deklaracja funkcji (function declaration) - cechą
+                    szczególną jest, że mogą być używane przed jej
+                    zadeklarowaniem.
+                  </span>
                 </li>
                 <li>
                   <span class="inner-section-list__content"
-                    >Wyrażenie funkcyjne (function expression) - są zasadniczo wartościami funkcyjnymi przechowywanymi w zmiennej. </span
-                  >
+                    >Wyrażenie funkcyjne (function expression) - są zasadniczo
+                    wartościami funkcyjnymi przechowywanymi w zmiennej.
+                  </span>
                 </li>
                 <li>
                   <span class="inner-section-list__content"
-                    >Funkcja strzałkowa (arrow function) - specjalne wyrażenia funkcyjne. Dobre do szybkich funkcji jednowierszowych, w których nie musmy używać nawiasów klamrowych ani słowa kluczowego.</span
+                    >Funkcja strzałkowa (arrow function) - specjalne wyrażenia
+                    funkcyjne. Dobre do szybkich funkcji jednowierszowych, w
+                    których nie musmy używać nawiasów klamrowych ani słowa
+                    kluczowego.</span
                   >
                 </li>
-              </ol>  
-              <p class="inner-section__text">Jak wygląda funkcja (deklaracja funkcji):</p>
+              </ol>
+              <p class="inner-section__text">
+                Jak wygląda funkcja (deklaracja funkcji):
+              </p>
               <div class="code-wrapper">
                 <pre><code class="code">
 <abbr class="light-on-hover" title="deklaracja">function</abbr> <abbr class="light-on-hover" title="nazwa">calculate</abbr><abbr class="light-on-hover" title="parametr">(myNumber)</abbr> {
@@ -903,9 +930,7 @@
                 było go wykorzystać potem w innych operacjach, np. wrzucić do
                 zmiennej.
               </p>
-              <p class="inner-section__text">
-                Wyrażenie funkcyjne:
-              </p>
+              <p class="inner-section__text">Wyrażenie funkcyjne:</p>
               <div class="code-wrapper">
                 <pre><code class="code">
 const calculate = function (myNumber) {  
@@ -913,9 +938,7 @@ const calculate = function (myNumber) {
 }
                 </code></pre>
               </div>
-              <p class="inner-section__text">
-                Arrow function:
-              </p>
+              <p class="inner-section__text">Arrow function:</p>
               <div class="code-wrapper">
                 <pre><code class="code">
 const calculate = myNumber =&gt; myNumber*7;
@@ -3232,10 +3255,14 @@ stopButton.addEventListener('click', (e) => {
   </code></pre>
               </div>
               <p class="inner-section__text">
-                <span class="mark">></span> - bezpośrednie dziecko. Czasami się przydaje w nawigacji gdzie mamy zagnieżdżone listy nawigacyjne i nie ma możliwości zmiany html-a.
+                <span class="mark">></span> - bezpośrednie dziecko. Czasami się
+                przydaje w nawigacji gdzie mamy zagnieżdżone listy nawigacyjne i
+                nie ma możliwości zmiany html-a.
               </p>
               <p class="inner-section__text">
-                <span class="mark">[]</span> - selektor atrybutów. Pozwala na wybieranie rzeczy za pomocą atrybutów. Możemy tworzyć własne atrybuty. Np.:
+                <span class="mark">[]</span> - selektor atrybutów. Pozwala na
+                wybieranie rzeczy za pomocą atrybutów. Możemy tworzyć własne
+                atrybuty. Np.:
               </p>
               <div class="code-wrapper">
                 <pre><code class="code">[href] {
@@ -3244,16 +3271,20 @@ stopButton.addEventListener('click', (e) => {
   </code></pre>
               </div>
               <p class="inner-section__text">
-                atrybut<span class="mark">*</span>="sth" - oznacza, że ta wartość ma się gdzieś znaleźć.
+                atrybut<span class="mark">*</span>="sth" - oznacza, że ta
+                wartość ma się gdzieś znaleźć.
               </p>
               <p class="inner-section__text">
-                atrybut<span class="mark">^</span>="sth" - oznacza, że od tego powinno się zacząć.
+                atrybut<span class="mark">^</span>="sth" - oznacza, że od tego
+                powinno się zacząć.
               </p>
               <p class="inner-section__text">
-                atrybut<span class="mark">$</span>="sth" - oznacza, że ma się tym kończyć.
+                atrybut<span class="mark">$</span>="sth" - oznacza, że ma się
+                tym kończyć.
               </p>
               <p class="inner-section__text">
-                Przydaje się gdy np. chcemy wyróżnić linki do zewnętrznych serwisów od tych wewnętrznych.
+                Przydaje się gdy np. chcemy wyróżnić linki do zewnętrznych
+                serwisów od tych wewnętrznych.
               </p>
             </section>
           </article>

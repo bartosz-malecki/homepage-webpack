@@ -3240,6 +3240,24 @@ stopButton.addEventListener('click', (e) => {
                 Kilka przydatnych selektorów w CSS
               </h4>
               <p class="inner-section__text">
+                Selektor potomków np. wybiera wszystkie
+                <span class="mark">li</span> które są zagnieżdżone lub potomkami
+                w item:
+              </p>
+              <div class="code-wrapper">
+                <pre><code class="code">item  li {
+    właściwość: wartość;
+}
+  </code></pre>
+              </div>
+              <p class="inner-section__text">Podobnie działa to z id:</p>
+              <div class="code-wrapper">
+                <pre><code class="code">#item  li {
+    właściwość: wartość;
+}
+  </code></pre>
+              </div>
+              <p class="inner-section__text">
                 <span class="mark">+</span> - selektor bezpośredniego
                 rodzeństwa. Pierwsze wystąpienie po. Przydatne gdy nie mamy
                 dostępu do klas/html.
@@ -3262,10 +3280,11 @@ stopButton.addEventListener('click', (e) => {
               <p class="inner-section__text">
                 <span class="mark">[]</span> - selektor atrybutów. Pozwala na
                 wybieranie rzeczy za pomocą atrybutów. Możemy tworzyć własne
-                atrybuty. Np.:
+                atrybuty. Np. wybiera wszystkie inputy gdzie atrybut jest typ
+                'text':
               </p>
               <div class="code-wrapper">
-                <pre><code class="code">[href] {
+                <pre><code class="code">input[type="text"] {
     właściwość: wartość;
 }
   </code></pre>
